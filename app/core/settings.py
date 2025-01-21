@@ -47,6 +47,18 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+CUSTOM_APP = [
+    "apps.base",
+]
+
+THIRDS_APP = [
+   
+]
+
+INSTALLED_APPS += THIRDS_APP
+INSTALLED_APPS += CUSTOM_APP
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

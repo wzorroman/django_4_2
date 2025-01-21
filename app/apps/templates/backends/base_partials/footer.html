@@ -1,0 +1,17 @@
+<footer class="main-footer">
+  <strong>Copyright &copy; 2025</strong>
+  All rights reserved.
+  {% if request.session.igv_percentage_default %}
+  <div class="float-center d-none d-sm-inline-block" style="display: inline-flex !important; padding-left: 5px;">
+    <div class="border" style="padding: 3px; margin-left: 2px;">
+      <label>IGV:</label>&nbsp;<span>{{ request.session.igv_percentage_default|floatformat:'2' }} %</span>
+    </div>
+    <div class="border" style="padding: 3px; margin-left: 2px;">
+      <label>OFFICE:</label>&nbsp;<span>{{ request.session.user_office_code }}</span>
+    </div>
+  </div>
+  {% endif %}
+  <div class="float-right d-none d-sm-inline-block">
+    <b>Innova Version</b> 0.0.1
+  </div>
+</footer>

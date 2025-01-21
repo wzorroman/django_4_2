@@ -3,7 +3,7 @@ Es un proyecto basado en Django y Mysql
 
  Versiones:
  - python version: 3.10
- - Django version: 4.1
+ - Django version: 4.2
  - mysql version: 8.0
 
 # Instalando el proyecto
@@ -24,12 +24,7 @@ Es un proyecto basado en Django y Mysql
   |---------------|-------------|----------|
   | Administrador | admin       | admin    |
   | Cliente       | cliente     | admin    |
-  | Profesional   | profesional | admin    |
  
-
-## Visit PhpMyAdmin: 
-  `http://localhost:8090`
-    - user: root | pass: rootpassword
 
 ## inspeccionar los logs (django-web):
   `docker logs -f django-web`
@@ -65,6 +60,7 @@ Es un proyecto basado en Django y Mysql
  - Se tiene que crear con el comando:
    `python manage.py startapp name_my_app`
  - Luego moverla a la carpeta **apps**, en donde se encuentra todas las apps creadas previamente.
+    renombrar la variable **name**:  `name = 'apps.base'`
 
 ## Sobre uso de constantes en el proyecto
  - El manejo de todas las constantes esta en el archivo **constants** para todo el proyecto, la ubicacion esta en la carpeta "common" dentro de apps

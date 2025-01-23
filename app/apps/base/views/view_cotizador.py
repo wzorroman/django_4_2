@@ -6,6 +6,8 @@ from django.urls import reverse
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
+from apps.base.decoradores import medir_tiempo
+
 
 from ..forms.form_cotizador import CotizadorForm
 
@@ -24,12 +26,12 @@ class CotizadorDemoView(FormView):
         subtitle_table = "Formulario"
 
         context.update({
-            'CLASS_MENU_MAESTROS': "menu-open",
-            'CLASS_MENU_MAESTROS_SELECT': "active",
-            'CLASS_MENU_0_CLIENT': "menu-open",
-            'CLASS_MENU_0_CLIENT_SELECT': "active",
-            'CLASS_MENU_1_CLIENT_ADD': "",
-            'CLASS_MENU_1_CLIENT_LIST': "active",
+            #'CLASS_MENU_MAESTROS': "menu-open",
+            #'CLASS_MENU_MAESTROS_SELECT': "active",
+            #'CLASS_MENU_0_CLIENT': "menu-open",
+            #'CLASS_MENU_0_CLIENT_SELECT': "active",
+            #'CLASS_MENU_1_CLIENT_ADD': "",
+            #'CLASS_MENU_1_CLIENT_LIST': "active",
             'title_page': title_page,
             'main_title_content': main_title_content,
             'main_subtitle_content': main_subtitle_content,
@@ -111,6 +113,7 @@ class CronogramaReporte(TemplateView):
         
         return context
 
+    @medir_tiempo
     def procesar_cuotas(self):
         cuota = 0
         nro_cuotas = 1

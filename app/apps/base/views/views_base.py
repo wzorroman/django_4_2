@@ -43,5 +43,3 @@ class IndexBlankView(TemplateView):
             'subtitle_table': subtitle_table,
         })
         return context
-
-

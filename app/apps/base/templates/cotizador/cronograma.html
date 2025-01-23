@@ -1,0 +1,103 @@
+{% extends 'backends/base_admin.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block sidebar %}
+  {% include 'backends/base_partials/left_sidebar_demo.html' %}
+{% endblock %}
+
+{% block breadcrumb_items %}
+  <li class="breadcrumb-item">Client</li>
+  <li class="breadcrumb-item active">List</li>
+{% endblock %}
+
+{% block content_title %}
+  {{ main_title_content }}
+{% endblock %}
+
+{% block content %}
+  <!-- Default box -->
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">{{ main_subtitle_content }}</h3>
+      
+    </div>
+    <div class="card-body">
+      
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-3">
+            <label class="form-label">Monto</label>
+            <input class="form-control text-right" type="text" value="{{ data.monto }}" disabled readonly>
+          </div>
+          <div class="col-3">            
+            <label class="form-label">Plazo (Meses)</label>
+            <input class="form-control text-right" type="text" value="{{ data.plazo_meses }}" disabled readonly>
+          </div>          
+          <div class="col-3">
+            <label class="form-label">Frecuencia</label>
+            <input class="form-control text-right" type="text" value="{{ data.frec_descripcion }}" disabled readonly>
+          </div>
+          <div class="col-3">
+            <label class="form-label">Tasa (%)</label>
+            <input class="form-control text-right" type="text" value="{{ data.tasa }}" disabled readonly>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label class="form-label">Fecha 1ra cuota</label>
+            <input class="form-control text-right" type="text" value="{{ data.fecha_cuota }}" disabled readonly>
+          </div>
+          <div class="col-3">
+            <label class="form-label">Nro cuotas</label>
+            <input class="form-control text-right" type="text" value="{{ data.nro_cuotas }}" disabled readonly>
+          </div>
+          <div class="col-3">
+            <label class="form-label">Monto cuota</label>
+            <input class="form-control text-right" type="text" value="{{ data.cuota|floatformat:2|intcomma  }}" disabled readonly>
+          </div>
+          <div class="col-3">
+            <label class="form-label">Monto total</label>
+            <input class="form-control text-right" type="text" value="{{ data.monto_total|floatformat:2|intcomma  }}" disabled readonly>
+          </div>
+        </div>
+        <br>
+        <h4 class="fw-bold" style="text-decoration: underline; text-align: left; font-size: 1.1em;">Cuotas</h4>
+        <table class="table table-striped border">
+            <thead class="bg-dark text-white">
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Fecha vencimiento</th>
+                <th scope="col">Cuota</th>
+                <th scope="col">Capital</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for det_cuota in data.data_cuotas.values %}
+                    <tr class="text-right">
+                        <th scope="row">{{ det_cuota.nro }}</th>
+                        <td class="text-center">{{ det_cuota.fecha_str }}</td>
+                        <td>s/. {{ det_cuota.cuota|floatformat:2|intcomma }}</td>
+                        <td>s/. {{ det_cuota.capital|floatformat:2|intcomma }}</td>
+                    </tr>                   
+                {% endfor %}               
+            </tbody>
+        </table>
+        
+      </div>
+
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">
+            
+        <button type="button" class="btn btn-outline-secondary" onclick="history.go(-1);">Regresor</button>
+    </div>
+    <!-- /.card-footer-->
+  </div>
+  <!-- /.card -->
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/custom.js' %}"></script>
+{% endblock %}3
+

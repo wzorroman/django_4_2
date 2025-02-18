@@ -1,0 +1,19 @@
+<!-- messages error in form-->
+<div class="col-lg-12">
+  <div class="form-group">
+    {% if form.errors %}
+      {% for field in form %}
+          {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ field.label }}</strong> <span>{{ error|escape }}</span>
+            </div>
+          {% endfor %}
+      {% endfor %}
+      {% for error in form.non_field_errors %}
+          <div class="alert alert-danger">
+              <strong>{{ error|escape }}</strong>
+          </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>

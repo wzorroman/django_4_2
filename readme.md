@@ -110,7 +110,11 @@ Es un proyecto basado en Django y Mysql
    ```sh
     # clear cache python
     find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
-   
+   ``` 
+ - Run test
+    ```sh
+     pytest -s -v app/apps/base/tests/tests.py
+    ```
 ---
 # Screenshots
 

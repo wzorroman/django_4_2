@@ -9,7 +9,7 @@ Es un proyecto basado en Django y Mysql
 # Instalando el proyecto
 
 ## levantar el Docker con las variables ".env" personalizadas:
-  `docker compose --env-file app/.env up --build`
+  `docker-compose --env-file app/.env up --build`
     - **Nota**: El archivo *.env* debe estar a la misma altura de *manage.py*, hacer una copia: *.env_sample*
 
 ## Cargar la preData:

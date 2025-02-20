@@ -1,0 +1,9 @@
+text
+# Ignorar archivos innecesarios
+*.pyc
+*.pyo
+__pycache__/
+.env
+.git/
+.vscode/
+.DS_Store

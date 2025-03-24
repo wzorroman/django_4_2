@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 ]
 
 CUSTOM_APP = [
+    "apps.tracking_user",
     "apps.base",
 ]
 
@@ -69,6 +70,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+MIDDLEWARE_INSTALLED = [
+    "crum.CurrentRequestUserMiddleware",
+    "simple_history.middleware.HistoryRequestMiddleware",
+]
+
+MIDDLEWARE += MIDDLEWARE_INSTALLED
 
 ROOT_URLCONF = 'core.urls'
 

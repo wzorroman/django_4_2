@@ -1,0 +1,46 @@
+@media print {
+  @page {
+    size: 330mm 427mm;
+    margin: 14mm;
+  }
+  .container {
+    width: 1170px;
+  }
+}
+
+.fas.fa-regular{ font-weight: 400 !important; }
+.nav-second-level > li > a { margin-left: 5px !important;}
+.nav-second-level > li > a:hover {background-color: #5a6268;}
+.nav-second-level > li > a > i{ color: #828080; }
+.nav-second-level > .menu-is-opening > a > i:before,
+.nav-second-level > .menu-open > a > i:before {
+    content: "\f07c"; /* icon=fa-folder-open */
+}
+
+.nav-third-level > li > a { margin-left: 10px !important;}
+.nav-third-level > li > .nav-link:focus,
+.nav-third-level > li > .nav-link:hover{
+    text-decoration: underline 0.15em rgba(0, 0, 0, 0) !important;
+    transition: text-decoration-color 5000ms !important;
+    text-decoration-color: rgba(255, 255, 255, 1);
+}
+.nav-third-level > li > .nav-link.active { background-color: rgba(255,255,255,.5) !important;}
+
+input::placeholder{ color: #c2bbbb !important; }
+
+.required {color: red; font-weight: bold; font-size: 0.9em; font-size: 1.1em; padding: 2px 5px;}
+.light_yellow{ background-color: #fcffa8 !important;}
+.labelfocus { text-shadow: 2px 1px 0px #fff6d2;}
+.mayusculas { text-transform:uppercase; }
+.uppercase { text-transform:uppercase; }
+.errorlist { font-style: italic; color: red; }
+.msj-close { background-color: #efe9e9 !important; border-radius: 15px; }
+.ancho_completo { width: 100% !important; }
+.field_disabled { background-color: #d3d9df !important; color: #8c8c8c !important;}
+.text_disabled { color: #8c8c8c !important; }
+.txt_opc_previa_seleccionado { color: #798590; font-style: italic;  float: right; padding-right: 5%;}
+.subtitulo_tabla1 { background-color: #cbcbcb; }
+.subtitulo_tabla2 { background-color: #efefef; }
+h4.subtitle { font-style: italic; font-size: 1.1em; color: #007bff !important; margin-top:15px; text-decoration: underline; font-weight: bold;}
+
+tr.schedule-table-ajust > td {padding: .45rem; }

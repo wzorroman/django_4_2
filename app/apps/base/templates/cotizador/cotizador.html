@@ -1,0 +1,90 @@
+{% extends 'backends/base_admin.html' %}
+{% load static %}
+
+{% block sidebar %}
+  {% include 'backends/base_partials/left_sidebar_demo.html' %}
+{% endblock %}
+
+{% block breadcrumb_items %}
+  <li class="breadcrumb-item">Client</li>
+  <li class="breadcrumb-item active">List</li>
+{% endblock %}
+
+{% block content_title %}
+  {{ main_title_content }}
+{% endblock %}
+
+{% block content %}
+  <!-- Default box -->
+  <div class="card">
+    <form method="post">
+    <div class="card-header">
+      <h3 class="card-title">{{ main_subtitle_content }}</h3>
+
+      <div class="card-tools">
+        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+          <i class="fas fa-minus"></i>
+        </button>
+        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <div class="card-body">
+          {% csrf_token %}
+          {% include 'backends/base_partials/form_error_messages.html' %}
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-md-3 col-xs-2">
+                <label class="form-label">Monto</label>
+                {{ form.initial_amount }}
+              </div>
+              <div class="col-md-2 col-xs-2">
+                <label class="form-label">Tasa</label>
+                {{ form.interest_rate }}
+              </div>
+              <div class="col-md-2">
+                <label class="form-label">Plazo (Meses)</label>
+                {{ form.term_months }}
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Frecuencia</label>
+                {{ form.payment_frequency }}
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                  <label class="form-label">Fecha 1ra Cuota</label>
+                  {{ form.first_payment_date }}
+                </div>
+                <div class="col-2">
+                  <label class="form-label">Sabado</label>
+                  {{ form.include_saturday }}
+                </div>
+                <div class="col-2">
+                  <label class="form-label">Domingo</label>
+                  {{ form.include_sunday }}
+                </div>
+
+            </div>
+          </div>
+
+
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">
+        <input type="submit"  class="btn btn-primary" value="Cotizar">
+        <a href="{% url 'base:quoter' %}" class="btn btn-outline-danger">
+          <i class="fas fa-backward"></i> Reset
+        </a>
+    </div>
+    <!-- /.card-footer-->
+    </form>
+  </div>
+  <!-- /.card -->
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'backend/cotizador/form_cotizador.js' %}"></script>
+{% endblock %}
+

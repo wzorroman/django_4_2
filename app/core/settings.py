@@ -45,7 +45,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 ]
+
+CUSTOM_APP = [
+    "apps.tracking_user",
+    "apps.base",
+]
+
+THIRDS_APP = [
+   
+]
+
+INSTALLED_APPS += THIRDS_APP
+INSTALLED_APPS += CUSTOM_APP
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -56,6 +70,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+MIDDLEWARE_INSTALLED = [
+    "crum.CurrentRequestUserMiddleware",
+    "simple_history.middleware.HistoryRequestMiddleware",
+]
+
+MIDDLEWARE += MIDDLEWARE_INSTALLED
 
 ROOT_URLCONF = 'core.urls'
 

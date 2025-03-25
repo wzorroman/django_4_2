@@ -1,0 +1,100 @@
+FRECUENCY_MONTHLY = 1
+FRECUENCY_FORTNIGHTLY = 2
+FRECUENCY_WEEKLY = 3
+FRECUENCY_DAILY = 4
+
+FRECUENCY_MONTHLY_STR = "Mensual"
+FRECUENCY_FORTNIGHTLY_STR = "Quincenal"
+FRECUENCY_WEEKLY_STR = "Semanal"
+FRECUENCY_DAILY_STR = "Diario"
+
+# Unique place where find all constants for using in project
+PK_COMPANY_DEFAULT = "1"
+PK_CURRENCY_DEFAULT = "USD"
+
+STATUS_GENERIC_DISABLED = "0"
+STATUS_GENERIC_ENABLED = "1"
+
+STATUS_GENERIC_ENABLED_DESC = "HABILITADO"
+STATUS_GENERIC_DISABLED_DESC = "DESHABILITADO"
+STATUS_GENERIC_CANCELLED_DESC = "ANULADO"
+
+STATUS_GENERIC_CHOICES = (
+    (STATUS_GENERIC_DISABLED, "Deshabilitado"),
+    (STATUS_GENERIC_ENABLED, "Habilitado"),
+)
+EMPTY_COMBO = [("", "-- seleccione --")]
+
+MONTHS_CHOICES = (
+    (1, "ENERO"),
+    (2, "FEBRERO"),
+    (3, "MARZO"),
+    (4, "ABRIL"),
+    (5, "MAYO"),
+    (6, "JUNIO"),
+    (7, "JULIO"),
+    (8, "AGOSTO"),
+    (9, "SEPTIEMBRE"),
+    (10, "OCTUBRE"),
+    (11, "NOVIEMBRE"),
+    (12, "DICIEMBRE"),
+)
+
+MONTHS_NAME = {
+    1: "ENERO",
+    2: "FEBRERO",
+    3: "MARZO",
+    4: "ABRIL",
+    5: "MAYO",
+    6: "JUNIO",
+    7: "JULIO",
+    8: "AGOSTO",
+    9: "SEPTIEMBRE",
+    10: "OCTUBRE",
+    11: "NOVIEMBRE",
+    12: "DICIEMBRE",
+}
+
+MONTHS_SHORT_NAME = {
+    1: "ENE",
+    2: "FEB",
+    3: "MAR",
+    4: "ABR",
+    5: "MAY",
+    6: "JUN",
+    7: "JUL",
+    8: "AGO",
+    9: "SEP",
+    10: "OCT",
+    11: "NOV",
+    12: "DIC",
+}
+
+DOCUMENT_TYPE_DNI = "DNI"
+DOCUMENT_TYPE_CE = "CE"
+DOCUMENT_TYPE_PAS = "PAS"
+DOCUMENT_TYPE_RUC = "RUC"
+DOCUMENT_TYPE_PTP = "PTP"
+DOCUMENT_TYPE_OTHERS = "OTHERS"
+DOCUMENT_TYPE_UNKNOWN = "UNK"
+DOCUMENT_TYPE_CHOICES = [
+    (DOCUMENT_TYPE_DNI, "DNI"),
+    (DOCUMENT_TYPE_RUC, "RUC"),
+    (DOCUMENT_TYPE_PAS, "Passport"),
+    (DOCUMENT_TYPE_CE, "CE"),
+    (DOCUMENT_TYPE_PTP, "Permiso Temporal Permanencia"),
+    (DOCUMENT_TYPE_OTHERS, "Otros"),
+    (DOCUMENT_TYPE_UNKNOWN, "Indocumentado"),
+]
+PERSON_DOCUMENT_TYPE_CHOICES = [
+    (DOCUMENT_TYPE_DNI, "DNI"),
+    (DOCUMENT_TYPE_PAS, "Passport"),
+    (DOCUMENT_TYPE_CE, "CE"),
+    (DOCUMENT_TYPE_PTP, "Permiso Temporal Permanencia"),
+]
+PERSON_DOCUMENT_TYPE2_CHOICES = PERSON_DOCUMENT_TYPE_CHOICES + [
+    (DOCUMENT_TYPE_OTHERS, "Otros"),
+]
+
+ROL_ID_ADMINISTRADOR = 1
+ROL_ID_CLIENTE = 2

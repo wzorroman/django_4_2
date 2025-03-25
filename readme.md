@@ -3,13 +3,13 @@ Es un proyecto basado en Django y Mysql
 
  Versiones:
  - python version: 3.10
- - Django version: 4.1
+ - Django version: 4.2
  - mysql version: 8.0
 
 # Instalando el proyecto
 
 ## levantar el Docker con las variables ".env" personalizadas:
-  `docker compose --env-file app/.env up --build`
+  `docker-compose --env-file app/.env up --build`
     - **Nota**: El archivo *.env* debe estar a la misma altura de *manage.py*, hacer una copia: *.env_sample*
 
 ## Cargar la preData:
@@ -24,12 +24,7 @@ Es un proyecto basado en Django y Mysql
   |---------------|-------------|----------|
   | Administrador | admin       | admin    |
   | Cliente       | cliente     | admin    |
-  | Profesional   | profesional | admin    |
  
-
-## Visit PhpMyAdmin: 
-  `http://localhost:8090`
-    - user: root | pass: rootpassword
 
 ## inspeccionar los logs (django-web):
   `docker logs -f django-web`
@@ -65,6 +60,7 @@ Es un proyecto basado en Django y Mysql
  - Se tiene que crear con el comando:
    `python manage.py startapp name_my_app`
  - Luego moverla a la carpeta **apps**, en donde se encuentra todas las apps creadas previamente.
+    renombrar la variable **name**:  `name = 'apps.base'`
 
 ## Sobre uso de constantes en el proyecto
  - El manejo de todas las constantes esta en el archivo **constants** para todo el proyecto, la ubicacion esta en la carpeta "common" dentro de apps
@@ -114,7 +110,11 @@ Es un proyecto basado en Django y Mysql
    ```sh
     # clear cache python
     find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
-   
+   ``` 
+ - Run test
+    ```sh
+     pytest -s -v app/apps/base/tests/tests.py
+    ```
 ---
 # Screenshots
 
